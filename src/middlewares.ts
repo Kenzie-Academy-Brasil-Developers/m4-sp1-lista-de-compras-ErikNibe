@@ -61,7 +61,7 @@ const verifyPurchaseListItemKeysValues = (request: Request, response: Response, 
 
     const payloadValues = Object.values(request.body);
 
-    if(typeof payloadValues[0] && typeof payloadValues[1] !== "string") {
+    if(typeof payloadValues[0] !== "string" && typeof payloadValues[1] !== "string") {
         return response.status(400).json({
             message: "Items keys must be a string"
         })
